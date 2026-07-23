@@ -1,110 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <title>Happy Birthday Harshie ❤️</title>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
+*{box-sizing:border-box;font-family:Poppins,sans-serif}
 body{
-height:100vh;
-overflow:hidden;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(45deg,#ff758c,#ff7eb3,#fad0c4,#ffc3a0);
+margin:0;height:100vh;display:flex;align-items:center;justify-content:center;
+overflow:hidden;text-align:center;
+background:linear-gradient(45deg,#ff758c,#ff7eb3,#fad0c4);
 background-size:400% 400%;
-animation:bg 12s infinite alternate;
+animation:bg 10s infinite alternate;
 }
-
-@keyframes bg{
-0%{
-background-position:left;
-}
-100%{
-background-position:right;
-}
-}
+@keyframes bg{from{background-position:left}to{background-position:right}}
 
 .box{
-width:90%;
-max-width:650px;
-background:rgba(255,255,255,0.92);
-padding:35px;
-border-radius:30px;
-text-align:center;
-box-shadow:0 0 40px pink;
+width:90%;max-width:600px;background:white;padding:30px;
+border-radius:30px;box-shadow:0 0 40px pink;
+max-height:90vh;overflow:auto;
 }
 
-h1{
-color:#ff3366;
-font-size:42px;
-margin-bottom:20px;
-}
-
-p{
-font-size:19px;
-line-height:1.8;
-color:#444;
-}
+h1{color:#ff3366;font-size:40px}
+p{font-size:18px;line-height:1.8;color:#444}
 
 button{
-margin-top:30px;
-padding:15px 45px;
-border:none;
-border-radius:50px;
-background:#ff3366;
-color:white;
-font-size:22px;
-cursor:pointer;
+padding:15px 40px;border:0;border-radius:50px;
+background:#ff3366;color:white;font-size:20px;
 }
 
-.page{
-display:none;
-}
+.page{display:none}
 
 .heart{
-position:absolute;
-font-size:30px;
-animation:fall 6s linear infinite;
+position:absolute;font-size:25px;
+animation:h 5s linear infinite;
 }
-
-@keyframes fall{
-from{
-top:-50px;
-}
-to{
-top:100vh;
-opacity:0;
-}
+@keyframes h{
+from{top:-50px}
+to{top:100vh;opacity:0}
 }
 
 .balloon{
-position:absolute;
-font-size:50px;
-animation:up 8s linear infinite;
+position:absolute;font-size:45px;
+animation:b 7s linear infinite;
 }
-
-@keyframes up{
-from{
-bottom:-100px;
-}
-to{
-bottom:100vh;
-opacity:0;
-}
+@keyframes b{
+from{bottom:-100px}
+to{bottom:100vh;opacity:0}
 }
 
 </style>
-
 </head>
+
 
 <body>
 
@@ -112,386 +58,168 @@ opacity:0;
 <div class="box">
 
 
-<!-- PAGE 1 -->
-
-<div id="page1">
-
-<h1>
-💝 A Special Surprise 💝
-</h1>
-
-<p>
-Someone very special has created something beautiful for you ❤️
-</p>
-
-<button onclick="showPage(2)">
-Press Here ✨
-</button>
-
+<div id="p1">
+<h1>💝 A Special Surprise 💝</h1>
+<p>Someone special has created something for you ❤️</p>
+<button onclick="next()">Press Here ✨</button>
 </div>
 
 
-
-<!-- PAGE 2 -->
-
-<div id="page2" class="page">
-
-<h1>
-🎂 Happy Birthday Harshie 🎂
-</h1>
-
+<div class="page" id="p2">
+<h1>🎂 Happy Birthday Harshie 🎂</h1>
 <p>
-Wishing you endless happiness,
-success and love in your life ❤️
+Wishing you endless happiness, success and love ❤️
 <br><br>
-You are truly one of the most special people ✨
+You are truly very special ✨
 </p>
-
 </div>
 
 
-
-<!-- PAGE 3 -->
-
-<div id="page3" class="page">
-
-<h1>
-💖 Special Lines For You 💖
-</h1>
-
+<div class="page" id="p3">
+<h1>💖 Special Lines 💖</h1>
 <p>
-
 Meeting you was one of the most beautiful things that ever happened to me. ❤️
-
 <br><br>
-
 You are not just special, you are the reason behind so many of my smiles. ❤️
-
 <br><br>
-
 You deserve all the happiness, success, and love in the world. ❤️
-
 </p>
-
 </div>
 
-<!-- PAGE 4 -->
 
-<div id="page4" class="page">
-
-<h1>
-🌸 Thank You Harshie 🌸
-</h1>
-
+<div class="page" id="p4">
+<h1>🌸 Thank You 🌸</h1>
 <p>
-
 Thank you for coming into my life ❤️
-
 <br><br>
-
 You made my life more beautiful and special.
-
 <br><br>
-
-You are the person who always brings a smile on my face 🥰
-
+You always bring a smile on my face 🥰
 </p>
-
 </div>
 
 
-
-<!-- PAGE 5 -->
-
-<div id="page5" class="page">
-
-<h1>
-🎁 A Special Surprise For You 🎁
-</h1>
-
+<div class="page" id="p5">
+<h1>🎁 Special Surprise 🎁</h1>
 <p>
-
 Harshie ❤️
-
 <br><br>
-
 You are not just a person in my life,
 you are a beautiful part of my life.
-
 <br><br>
-
-Always keep smiling and stay happy ✨
-
+Always stay happy ✨
 </p>
-
 </div>
 
 
-
-
-<!-- PAGE 6 -->
-
-<div id="page6" class="page">
-
-<h1>
-❤️ From My Heart ❤️
-</h1>
-
-
+<div class="page" id="p6">
+<h1>❤️ From My Heart ❤️</h1>
 <p>
-
-
-Harshie tu schu  bov j mast manas che ❤️
-
+Harshie tu schu bov j mast manas che ❤️
 <br><br>
-
 Mara life ma aya pchi mari life te best banai didhi che.
-
 <br><br>
-
 Vagar putanu joye mane bdhu j apyu che.
-
 <br><br>
-
 Mara mangya vagar mane badhu api didhu che.
-
 <br><br>
-
 Mara papa bani ne rahyu che tu mari jode.
-
 <br><br>
-
 Seriously thank uh sooo much ❤️❤️🥰
-
 <br><br>
-
 Bas tne lose nai karvu ❤️
-
-<br><br><br>
-
-
+<br><br>
 Harshie tu life ni best vastu deserve kare che.
-
 <br><br>
-
 Pan marathi thse atlu hu 100% try kris tne khush rakhi's.
-
 <br><br>
-
 Tne badhu j apis.
-
 <br><br>
-
-Em nathi ke mne karvu nathi,
-
-mne karvu bov j bdhu che ne hu kris.
-
+Mne karvu bov j bdhu che ne hu kris.
 <br><br>
-
 Because you really means a lot for meee 🥰
-
 <br><br>
-
 And tu seriously best che ❤️
-
-
 </p>
-
-</div>
-
-<!-- PAGE 7 -->
-
-<div id="page7" class="page">
-
-<h1>
-🎂 Happy Birthday Harshie 🎂
-</h1>
-
-
-<div style="font-size:90px;">
-
-🎂
-
 </div>
 
 
+<div class="page" id="p7">
+<h1>🎂 Happy Birthday Harshie 🎂</h1>
+<div style="font-size:90px">🎂</div>
 <p>
-
 🎈🎈🎈
-
 <br><br>
-
-May your life always be filled with happiness,
-success and unlimited smiles ❤️
-
+May your life always be filled with happiness ❤️
 <br><br>
-
 You deserve the best things in the world ✨
-
 <br><br>
-
 Thank you for being you 🥰
-
 <br><br>
-
 ❤️ Happy Birthday Once Again ❤️
-
 </p>
-
-
 </div>
 
 
-
 </div>
-
 
 
 
 <script>
 
-
-let currentPage = 1;
-
+let page=1;
 
 
-function showPage(page){
+function next(){
+
+document.getElementById("p"+page).style.display="none";
+
+page++;
+
+document.getElementById("p"+page).style.display="block";
+
+animate();
 
 
-document.getElementById("page"+currentPage).style.display="none";
-
-
-currentPage = page;
-
-
-document.getElementById("page"+currentPage).style.display="block";
-
-
-createAnimation();
-
-
-
-autoNext();
-
+if(page<7){
+setTimeout(next,7000);
+}
 
 }
 
 
 
-
-function autoNext(){
-
-
-if(currentPage < 7){
-
-
-setTimeout(()=>{
-
-
-document.getElementById("page"+currentPage).style.display="none";
-
-
-currentPage++;
-
-
-document.getElementById("page"+currentPage).style.display="block";
-
-
-createAnimation();
-
-
-},6000);
-
-
-}
-
-
-}
-
-
-
-
-function createAnimation(){
-
-
+function animate(){
 
 setInterval(()=>{
 
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"%";
+document.body.appendChild(h);
 
-let heart=document.createElement("div");
-
-
-heart.className="heart";
-
-
-heart.innerHTML="❤️";
-
-
-heart.style.left=Math.random()*100+"%";
-
-
-document.body.appendChild(heart);
-
-
-
-setTimeout(()=>{
-
-
-heart.remove();
-
-
-},6000);
-
-
+setTimeout(()=>h.remove(),5000);
 
 },500);
 
 
-
-
-
 setInterval(()=>{
 
+let b=document.createElement("div");
+b.className="balloon";
+b.innerHTML="🎈";
+b.style.left=Math.random()*100+"%";
+document.body.appendChild(b);
 
-let balloon=document.createElement("div");
+setTimeout(()=>b.remove(),7000);
 
-
-balloon.className="balloon";
-
-
-balloon.innerHTML="🎈";
-
-
-balloon.style.left=Math.random()*100+"%";
-
-
-document.body.appendChild(balloon);
-
-
-
-setTimeout(()=>{
-
-
-balloon.remove();
-
-
-},8000);
-
-
-
-},1200);
-
-
+},1000);
 
 }
-
-
-
 
 </script>
 
 
-
 </body>
-
 </html>
