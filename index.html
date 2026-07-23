@@ -6,127 +6,110 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-    height:100vh;
-    overflow:hidden;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:linear-gradient(-45deg,#ff758c,#ff7eb3,#fad0c4,#ff9a9e);
-    background-size:400% 400%;
-    animation:bg 10s infinite alternate;
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(45deg,#ff758c,#ff7eb3,#fad0c4);
+background-size:400% 400%;
+animation:bg 12s infinite alternate;
 }
-
 
 @keyframes bg{
-    0%{
-        background-position:left;
-    }
-    100%{
-        background-position:right;
-    }
+0%{background-position:left;}
+100%{background-position:right;}
 }
 
-
 .container{
-    background:rgba(255,255,255,0.9);
-    padding:40px;
-    border-radius:30px;
-    width:90%;
-    max-width:550px;
-    box-shadow:0 0 30px rgba(255,0,100,0.4);
+background:rgba(255,255,255,0.92);
+width:90%;
+max-width:600px;
+padding:40px;
+border-radius:30px;
+text-align:center;
+box-shadow:0 0 40px pink;
 }
 
 
 h1{
-    color:#ff3366;
-    font-size:45px;
-    margin-bottom:20px;
+color:#ff3366;
+font-size:45px;
 }
 
 
 p{
-    font-size:20px;
-    color:#444;
-    line-height:1.7;
+font-size:20px;
+color:#444;
+line-height:1.8;
 }
 
 
 button{
-    margin-top:30px;
-    padding:15px 40px;
-    border:none;
-    border-radius:50px;
-    background:#ff3366;
-    color:white;
-    font-size:22px;
-    cursor:pointer;
-    animation:pulse 1.5s infinite;
+margin-top:30px;
+padding:15px 45px;
+border:none;
+border-radius:50px;
+background:#ff3366;
+color:white;
+font-size:22px;
+cursor:pointer;
 }
 
-
-@keyframes pulse{
-    50%{
-        transform:scale(1.1);
-    }
-}
 
 
 .page{
-    display:none;
+display:none;
 }
-
 
 
 .heart{
-    position:absolute;
-    font-size:30px;
-    animation:heart 5s linear infinite;
+position:absolute;
+font-size:30px;
+animation:fall 6s linear infinite;
 }
 
 
-@keyframes heart{
-
-    from{
-        transform:translateY(-100px);
-    }
-
-    to{
-        transform:translateY(100vh);
-        opacity:0;
-    }
-
+@keyframes fall{
+from{
+top:-50px;
+}
+to{
+top:100vh;
+opacity:0;
+}
 }
 
 
 
 .balloon{
-
-    position:absolute;
-    font-size:50px;
-    animation:balloon 6s linear infinite;
-
+position:absolute;
+font-size:50px;
+animation:up 8s linear infinite;
 }
 
 
-@keyframes balloon{
+@keyframes up{
+from{
+bottom:-100px;
+}
+to{
+bottom:100vh;
+opacity:0;
+}
+}
 
-    from{
-        bottom:-100px;
-    }
 
-    to{
-        bottom:100vh;
-        opacity:0;
-    }
 
+#typing{
+min-height:180px;
 }
 
 
@@ -138,17 +121,21 @@ button{
 <body>
 
 
+<audio autoplay loop>
+<source src="https://www.chosic.com/wp-content/uploads/2021/11/Romantic-Piano.mp3">
+</audio>
+
+
+
 <div class="container">
 
 
 <div id="page1">
 
-<h1>
-💝 A Special Surprise 💝
-</h1>
+<h1>💝 A Special Surprise 💝</h1>
 
 <p>
-I have something special for you...
+Someone special has something waiting for you...
 </p>
 
 
@@ -164,24 +151,19 @@ Press Here ✨
 
 <div id="page2" class="page">
 
-
 <h1>
 🎂 Happy Birthday Harshie 🎂
 </h1>
 
 
-<p>
-❤️ Meeting you was one of the most beautiful things that ever happened to me.
-<br><br>
+<h2 id="count"></h2>
 
-❤️ You are not just special, you are the reason behind so many of my smiles.
-<br><br>
 
-❤️ You deserve all the happiness, success, and love in the world.
-</p>
+<p id="typing"></p>
 
 
 </div>
+
 
 
 
@@ -197,32 +179,44 @@ Press Here ✨
 <p>
 
 You are the best ❤️
+
 <br><br>
 
 Thank you for everything ✨
+
 <br><br>
 
-May your life always be filled with happiness and beautiful memories 🌸
+May your life always be filled with happiness,
+success and endless beautiful memories 🌸
+
+<br><br>
+
+🎈 Happy Birthday Once Again Harshie 🎈
 
 </p>
 
 
-<h2>
-🎈 Happy Birthday Once Again 🎈
-</h2>
-
-
 </div>
 
 
 
 </div>
-
 
 
 
 
 <script>
+
+
+let text = [
+
+"Meeting you was one of the most beautiful things that ever happened to me. ❤️",
+
+"You are not just special, you are the reason behind so many of my smiles. 💖",
+
+"You deserve all the happiness, success, and love in the world. ✨"
+
+];
 
 
 function start(){
@@ -231,13 +225,11 @@ function start(){
 document.getElementById("page1").style.display="none";
 
 
-createAnimation();
-
-
-
 setTimeout(()=>{
 
 document.getElementById("page2").style.display="block";
+
+typingEffect();
 
 },3000);
 
@@ -250,8 +242,10 @@ document.getElementById("page2").style.display="none";
 document.getElementById("page3").style.display="block";
 
 
-},9000);
+},22000);
 
+
+animation();
 
 
 }
@@ -259,29 +253,80 @@ document.getElementById("page3").style.display="block";
 
 
 
-function createAnimation(){
+function typingEffect(){
+
+
+let i=0;
+let j=0;
+
+
+function type(){
+
+
+if(j<text.length){
+
+
+if(i<text[j].length){
+
+
+document.getElementById("typing").innerHTML += text[j][i];
+
+i++;
+
+setTimeout(type,50);
+
+
+}
+
+
+else{
+
+
+document.getElementById("typing").innerHTML += "<br><br>";
+
+j++;
+
+i=0;
+
+setTimeout(type,1000);
+
+
+}
+
+
+}
+
+
+}
+
+
+type();
+
+
+}
+
+
+
+
+
+function animation(){
 
 
 setInterval(()=>{
 
 
-let heart=document.createElement("div");
+let h=document.createElement("div");
 
-heart.className="heart";
+h.className="heart";
 
-heart.innerHTML="❤️";
+h.innerHTML="❤️";
 
-heart.style.left=Math.random()*100+"%";
+h.style.left=Math.random()*100+"%";
 
-document.body.appendChild(heart);
+document.body.appendChild(h);
 
 
-setTimeout(()=>{
-
-heart.remove();
-
-},5000);
-
+setTimeout(()=>h.remove(),6000);
 
 
 },300);
@@ -292,27 +337,18 @@ heart.remove();
 setInterval(()=>{
 
 
-let balloon=document.createElement("div");
+let b=document.createElement("div");
+
+b.className="balloon";
+
+b.innerHTML="🎈";
+
+b.style.left=Math.random()*100+"%";
+
+document.body.appendChild(b);
 
 
-balloon.className="balloon";
-
-balloon.innerHTML="🎈";
-
-
-balloon.style.left=Math.random()*100+"%";
-
-
-document.body.appendChild(balloon);
-
-
-
-setTimeout(()=>{
-
-balloon.remove();
-
-},6000);
-
+setTimeout(()=>b.remove(),8000);
 
 
 },1000);
@@ -321,8 +357,34 @@ balloon.remove();
 }
 
 
-</script>
 
+
+
+// Countdown
+
+let birthday=new Date("July 24, 2026 00:00:00").getTime();
+
+
+setInterval(()=>{
+
+
+let now=new Date().getTime();
+
+let distance=birthday-now;
+
+
+let days=Math.floor(distance/(1000*60*60*24));
+
+
+document.getElementById("count").innerHTML=
+"🎁 Only "+days+" Days Left 🎁";
+
+
+},1000);
+
+
+
+</script>
 
 
 </body>
